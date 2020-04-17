@@ -1,0 +1,28 @@
+version: '3.7'
+volumes:
+  sfdb:
+
+services:
+  sfdb:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "${SHAKENFIST_DB_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "sf"
+      MYSQL_USER: "sf"
+      MYSQL_PASSWORD: "${SHAKENFIST_DB_PASSWORD}"
+    volumes:
+      - sfdb:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  migrations:
+    build: .
+    command: ["bash", "-c", "sleep 15 && alembic upgrade head"]
+    working_dir: /srv/shakenfist/src/shakenfist
+    env_file:
+      - .env
+    environment:
+      SHAKENFIST_SQL_URL: "mysql://sf:${SHAKENFIST_DB_PASSWORD}@sfdb/sf"
+    depends_on:
+      - sfdb

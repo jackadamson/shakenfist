@@ -1,0 +1,13 @@
+- name: Set deployment directory
+  set_fact:
+    compose_directory: "{{ SHAKENFIST_COMPOSE_DIR or '~/shakenfist' | expanduser }}"
+
+- name: Create .env file with deployment vars
+  template:
+    src: env.tmpl
+    dest: "{{ compose_directory }}/.env"
+
+- name: Create docker-compose.yml
+  template:
+    src: docker-compose.yml.tmpl
+    dest: "{{ compose_directory }}/docker-compose.yml"

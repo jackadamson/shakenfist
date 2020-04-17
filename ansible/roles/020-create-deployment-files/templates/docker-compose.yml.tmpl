@@ -1,0 +1,51 @@
+version: '3.7'
+volumes:
+  sfstorage:
+{% if SHAKENFIST_NODE_IP == SHAKENFIST_DB_IP %}
+  sfdb:
+{% endif %}
+
+services:
+  shakenfist:
+    build: .
+    privileged: true
+    network_mode: host
+    restart: always
+    devices:
+      - "/dev/kvm:/dev/kvm"
+    volumes:
+      - "/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "${SHAKENFIST_STORAGE_PATH}:${SHAKENFIST_STORAGE_PATH}"
+      - "./ansible/files/libvirt.tmpl:${SHAKENFIST_STORAGE_PATH}/libvirt.tmpl:ro"
+      - "./ansible/files/dhcp.tmpl:${SHAKENFIST_STORAGE_PATH}/dhcp.tmpl:ro"
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+      - MKNOD
+    ports:
+      - 13000:13000
+{% if SHAKENFIST_NODE_IP == SHAKENFIST_DB_IP %}
+  sfdb:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "${SHAKENFIST_DB_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "sf"
+      MYSQL_USER: "sf"
+      MYSQL_PASSWORD: "${SHAKENFIST_DB_PASSWORD}"
+    volumes:
+      - sfdb:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  migrations:
+    build: .
+    command: ["bash", "-c", "sleep 15 && alembic upgrade head"]
+    working_dir: /srv/shakenfist/src/shakenfist
+    env_file:
+      - .env
+    depends_on:
+      - sfdb
+{% endif %}
