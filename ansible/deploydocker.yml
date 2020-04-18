@@ -1,0 +1,30 @@
+--- # Install shakenfist on a series of Ubuntu machines
+- hosts: all
+  become: yes
+  vars:
+    pip_executable: pip3
+    pip_install_packages:
+      - name: docker
+  roles:
+    - geerlingguy.pip
+    - geerlingguy.docker
+
+- name: Build Container Image
+  hosts: localhost
+  connection: local
+  roles:
+    - 010-build-container
+
+- name: Copy container image to hosts
+  hosts:
+    - db
+    - hypervisors
+  become: yes
+  roles:
+    - 020-copy-container-image
+
+- name: Create deployment configs
+  hosts:
+    - db
+    - hypervisors
+

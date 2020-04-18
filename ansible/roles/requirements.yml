@@ -1,0 +1,5 @@
+# Instally docker python package
+- src: geerlingguy.pip
+
+# Install docker
+- src: geerlingguy.docker

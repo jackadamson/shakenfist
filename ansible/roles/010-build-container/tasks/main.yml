@@ -6,6 +6,7 @@
     build:
       path: "{{role_path}}/../../../"
       dockerfile: "{{role_path}}/files/Dockerfile"
+      pull: no
       rm: no  # Setting this to yes will make subsequent runs slower, but doesn't leave as much on the host
 
 - name: Create temporary directory to store container image archive
@@ -14,14 +15,13 @@
     suffix: build
   register: docker_image
 
-- name: Register temp directory fact
+- name: Register local temp directory fact
   set_fact:
-    docker_image_path: "{{ docker_image.path }}"
-  run_once: true
+    docker_image_path: "{{ docker_image.path }}/shakenfist.tar.gz"
 
 - name: Export Container Image
   docker_image:
     name: shakenfist
     tag: latest
     source: local
-    archive_path: "{{ docker_image_path }}/shakenfist.tar.gz"
+    archive_path: "{{ docker_image_path }}"

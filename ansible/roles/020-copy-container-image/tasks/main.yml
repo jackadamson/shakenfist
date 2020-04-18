@@ -1,0 +1,26 @@
+- name: Create temporary directory to store container image archive
+  tempfile:
+    state: directory
+    suffix: build
+  register: remote_docker_image
+
+- name: Register remote temp directory fact
+  set_fact:
+    remote_docker_image_path: "{{ remote_docker_image.path }}/shakenfist.tar.gz"
+
+- name: Copy container image archive
+  copy:
+    src: "{{ hostvars['localhost']['docker_image_path'] }}"
+    dest: "{{ remote_docker_image_path }}"
+
+- name: Export Container Image
+  docker_image:
+    name: shakenfist
+    tag: latest
+    source: load
+    load_path: "{{ remote_docker_image_path }}"
+
+- name: Cleanup container image temp directory
+  file:
+    state: absent
+    path: "{{ remote_docker_image.path }}"

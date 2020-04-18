@@ -1,6 +1,12 @@
 - name: Set deployment directory
   set_fact:
-    compose_directory: "{{ SHAKENFIST_COMPOSE_DIR or '~/shakenfist' | expanduser }}"
+    compose_directory: "{{ compose_dir or '~/shakenfist' | expanduser }}"
+
+- name: Create deployment directory
+  file:
+    path: "{{ compose_directory}}"
+    state: directory
+    recurse: yes
 
 - name: Create .env file with deployment vars
   template:
