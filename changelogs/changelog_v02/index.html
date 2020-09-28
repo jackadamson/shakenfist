@@ -1,0 +1,532 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+    
+    
+      
+        <title>Changelog v02 - Shakenfist</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#changes-between-v027-and-v028" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Shakenfist" class="md-header-nav__button md-logo" aria-label="Shakenfist">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Shakenfist
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Changelog v02
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Shakenfist" class="md-nav__button md-logo" aria-label="Shakenfist">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Shakenfist
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Shaken Fist, a minimal cloud aimed at small and edge deployments" class="md-nav__link">
+      Shaken Fist, a minimal cloud aimed at small and edge deployments
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/" title="Installing Shaken Fist" class="md-nav__link">
+      Installing Shaken Fist
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../networking_explained/" title="Networking Explained" class="md-nav__link">
+      Networking Explained
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../networking_explained_single_instance/" title="Networking explained" class="md-nav__link">
+      Networking explained
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../power_states/" title="Power states" class="md-nav__link">
+      Power states
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../release_process/" title="Release process" class="md-nav__link">
+      Release process
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Changelogs
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Changelogs" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Changelogs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Changelog v02" class="md-nav__link md-nav__link--active">
+      Changelog v02
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../changelog_v03/" title="Changelog v03" class="md-nav__link">
+      Changelog v03
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Development
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/git_usage/" title="Development Work Flow" class="md-nav__link">
+      Development Work Flow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/namespace_auth/" title="Namespace auth" class="md-nav__link">
+      Namespace auth
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/standards/" title="Standards" class="md-nav__link">
+      Standards
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="changes-between-v027-and-v028">Changes between v0.2.7 and v0.2.8</h1>
+<p>v0.2.8 has not yet been released.</p>
+<ul>
+<li>Allow the setting of numeric configuration values. <a href="https://github.com/shakenfist/shakenfist/issues/324">Bug 324</a>.</li>
+<li>Backing file information must be provided with modern libvirts. <a href="https://github.com/shakenfist/shakenfist/issues/326">Bug 326</a>.</li>
+</ul>
+<h1 id="changes-between-v026-and-v027">Changes between v0.2.6 and v0.2.7</h1>
+<p>v0.2.7 was released on 26 September 2020.</p>
+<ul>
+<li>Fix import error in scheduler.py</li>
+</ul>
+<h1 id="changes-between-v025-and-v026">Changes between v0.2.5 and v0.2.6</h1>
+<p>v0.2.6 was released on 26 September 2020.</p>
+<ul>
+<li>Fix typo in gunicorn command line.</li>
+</ul>
+<h1 id="changes-between-v024-and-v025">Changes between v0.2.4 and v0.2.5</h1>
+<p>v0.2.5 was released on 3 August 2020.</p>
+<ul>
+<li>API requests without a JSON payload fail when made to a non-network node. <a href="https://github.com/shakenfist/shakenfist/issues/261">Bug 261</a>.</li>
+<li>Resolve error during instance start. <a href="https://github.com/shakenfist/shakenfist/issues/263">Bug 263</a>.</li>
+<li>Resolve a crash in the network monitor. <a href="https://github.com/shakenfist/shakenfist/issues/264">Bug 264</a>.</li>
+</ul>
+<h1 id="changes-between-v023-and-v024">Changes between v0.2.3 and v0.2.4</h1>
+<p>v0.2.4 was released on 2 August 2020.</p>
+<ul>
+<li>Remove stray networks when detected. <a href="https://github.com/shakenfist/shakenfist/issues/161">Bug 161</a>.</li>
+<li>Display video details of an instance in sf-client. <a href="https://github.com/shakenfist/shakenfist/issues/216">Bug 216</a>.</li>
+<li>The login prompt trigger is now more reliable. <a href="https://github.com/shakenfist/shakenfist/issues/223">Bug 223</a>.</li>
+<li>Rapid creates from terraform can crash Shaken Fist with a race condition. <a href="https://github.com/shakenfist/shakenfist/issues/225">Bug 225</a>.</li>
+<li>Instance deletes could leave internal IP addresses allocated to deleted instances. <a href="https://github.com/shakenfist/shakenfist/issues/227">Bug 227</a>.</li>
+<li>sf-client now displays network card model. <a href="https://github.com/shakenfist/shakenfist/issues/228">Bug 228</a>.</li>
+<li>Missing node metrics could cause a scheduler crash. <a href="https://github.com/shakenfist/shakenfist/issues/236">Bug 236</a>.</li>
+<li>A missing import caused a scheduler crash. <a href="https://github.com/shakenfist/shakenfist/issues/236">Bug 237</a>.</li>
+<li>You can now list the instances on a network with sf-client. <a href="https://github.com/shakenfist/shakenfist/issues/240">Bug 240</a>.</li>
+<li>Disabling DHCP for networks did not work correctly. <a href="https://github.com/shakenfist/shakenfist/issues/245">Bug 245</a>.</li>
+<li>Ubuntu 18.04's cloud-init would issue warnings about network interface types. <a href="https://github.com/shakenfist/shakenfist/issues/250">Bug 250</a>.</li>
+<li>Network interfaces were sometimes leaked. <a href="https://github.com/shakenfist/shakenfist/issues/252">Bug 252</a>.</li>
+<li>sf-client would sometimes crash if the disk bus was the default. <a href="https://github.com/shakenfist/shakenfist/issues/253">Bug 253</a>.</li>
+<li>Load balancers were causing annoying log messages which have been demoted to debug level. <a href="https://github.com/shakenfist/shakenfist/issues/258">Bug 258</a>.</li>
+</ul>
+<h1 id="changes-between-v022-and-v023">Changes between v0.2.2 and v0.2.3</h1>
+<p>v0.2.3 was released on 25 July 2020.</p>
+<ul>
+<li>Run CI tests multiple times to try and shake out timing errors. <a href="https://github.com/shakenfist/shakenfist/issues/191">Bug 191</a>.</li>
+<li>Be more flexible in what VDI video configurations we allow. <a href="https://github.com/shakenfist/shakenfist/issues/201">Bug 201</a>.</li>
+<li>Log power state changes as instance events. <a href="https://github.com/shakenfist/shakenfist/issues/203">Bug 203</a>.</li>
+<li>Handle bad video card choices more gracefully. <a href="https://github.com/shakenfist/shakenfist/issues/219">Bug 219</a>.</li>
+</ul>
+<h1 id="changes-between-v021-and-v022">Changes between v0.2.1 and v0.2.2</h1>
+<p>v0.2.2 was released on 23 July 2020.</p>
+<ul>
+<li>Support for cascading delete of resources when you delete a namespace. <a href="https://github.com/shakenfist/shakenfist/issues/157">Bug 157</a>.</li>
+<li>Shaken Fist now tracks the power state of instances and exposes that via the REST API and command line client. We also kill stray instances which are left running after deletion. <a href="https://github.com/shakenfist/shakenfist/issues/173">Bug 173</a>; <a href="https://github.com/shakenfist/shakenfist/issues/184">bug 184</a>; <a href="https://github.com/shakenfist/shakenfist/issues/192">bug 192</a>; and <a href="https://github.com/shakenfist/shakenfist/issues/197">bug 197</a>.</li>
+<li>The API (and command line client) now display the version of Shaken Fist installed on each node. <a href="https://github.com/shakenfist/shakenfist/issues/175">Bug 175</a>.</li>
+<li>The network event cleanup code handles larger numbers of events needing to be cleaned on upgrade. <a href="https://github.com/shakenfist/shakenfist/issues/176">Bug 176</a>.</li>
+<li>Kernel Shared Memory is now configured by the deployer and used by Shaken Fist to over subscribe memory in cases where pages are successfully being shared. <a href="https://github.com/shakenfist/shakenfist/issues/177">Bug 177</a>; <a href="https://github.com/shakenfist/deploy/issues/28">deployer bug 28</a>; and <a href="https://github.com/shakenfist/deploy/issues/33">deployer bug 33</a>.</li>
+<li>Instance nodes are now correctly reported in cases where placement was forced. <a href="https://github.com/shakenfist/shakenfist/issues/179">Bug 179</a>.</li>
+<li>Instance scheduling is retried on a different node in cases where the churn rate is sufficient for the cached resource availability information to be inaccurate. <a href="https://github.com/shakenfist/shakenfist/issues/186">Bug 186</a>.</li>
+<li>A permissions denied error was corrected for shakenfist.json accesses in the comment line client. <a href="https://github.com/shakenfist/shakenfist/issues/187">Bug 187</a>.</li>
+<li>Incorrect database information for instances or network interfaces no longer crashes the start of new instances. <a href="https://github.com/shakenfist/shakenfist/issues/194">Bug 194</a>.</li>
+<li>Instance names must now be DNS safe. <a href="https://github.com/shakenfist/shakenfist/issues/200">Bug 200</a>.</li>
+<li>The deployer now checks that the configured MTU on the VXLAN mesh interface is sane. <a href="https://github.com/shakenfist/deploy/issues/30">Deployer bug 30</a>, and <a href="https://github.com/shakenfist/deploy/issues/32">deployer bug 32</a>.</li>
+</ul>
+<h1 id="changes-between-v020-and-v021">Changes between v0.2.0 and v0.2.1</h1>
+<p>v0.2.1 was released on 16 July 2020.</p>
+<ul>
+<li>Fix crash in cleaner daemon when an etcd compaction fails. <a href="https://github.com/shakenfist/shakenfist/issues/152">Bug 152</a>.</li>
+<li>Fix HTTP 500 errors when malformed authorization headers are passed on API calls. <a href="https://github.com/shakenfist/shakenfist/issues/154">Bug 154</a>.</li>
+<li>Avoid starting instances on the network node if possible. <a href="https://github.com/shakenfist/shakenfist/issues/156">Bug 156</a>.</li>
+<li>Track and expose instance power states. Show instance state and power state in instance listings. <a href="https://github.com/shakenfist/shakenfist/issues/159">Bug 159</a>.</li>
+<li>Correct resource-in-use errors for specific IP requests. <a href="https://github.com/shakenfist/shakenfist/issues/162">Bug 162</a>.</li>
+<li>Network mesh event logging was too verbose. Only log additions and removals from the mesh. Also cleanup old mesh events on upgrade. <a href="https://github.com/shakenfist/shakenfist/issues/163">Bug 163</a>.</li>
+<li>Nodes now report what version of Shaken Fist they are running via etcd. <a href="https://github.com/shakenfist/shakenfist/issues/164">Bug 164</a>.</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../release_process/" title="Release process" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Release process
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../changelog_v03/" title="Changelog v03" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Changelog v03
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
